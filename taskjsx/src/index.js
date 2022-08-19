@@ -5,25 +5,17 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-
-let i,j,array = [],count
-const primenumber = () => {
-  for (i = 1; i <= 100; i++) {
-    count = 0
-    for (j = 2; j < i; j++) {
-      if (i % j === 0) {
-        count = 1
-      }
-    }
-    if (count === 0) {
-      array.push(i)
-    }
-  }
-}
-primenumber()
-const element = (
-  <ul>{array.map((item) => {return <li>{item}</li>})}</ul>);
-  root.render(element)
+var cities=["Lucknow","Agra","Kanpur","Gorakhpur","Rajasthan","Goa","Nepal"]
+var sortedcity=cities.sort()
+console.log(sortedcity)
+const element = (<ul>{sortedcity.map((item) => {return <li>{item}</li>})}</ul>);
+  root.render(
+    <div>
+    <ul>
+       {element}
+     </ul>
+  </div>
+  )
   reportWebVitals()
 
 
