@@ -5,15 +5,26 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-const factorial = (num) => {
-  for (var fact = 1; num > 1; num--) {
-    fact = fact * num
+
+let i,j,array = [],count
+const primenumber = () => {
+  for (i = 1; i <= 100; i++) {
+    count = 0
+    for (j = 2; j < i; j++) {
+      if (i % j === 0) {
+        count = 1
+      }
+    }
+    if (count === 0) {
+      array.push(i)
+    }
   }
-  return fact;
 }
-const ele = (<h1>{factorial(6)}</h1>)
-console.log(ele)
+primenumber()
+const element = (
+  <ul>{array.map((item) => {return <li>{item}</li>})}</ul>);
+  root.render(element)
+  reportWebVitals()
 
-root.render(ele)
 
-reportWebVitals()
+
